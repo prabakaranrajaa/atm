@@ -20,57 +20,69 @@ def deposit(accBalance, amount):
 
 
 def thanks():
-    print("Thank you for banking with PRABA BANK")
+    print("\nThank you for banking with PRABA BANK")
+    print("_____________________________________ \n")
 
 # welcoming the user and assigning values to some variables
 
 
 def main():
+    print("________________________________ \n")
     name = print("WELCOME HAPPY DAY, TO PRABA BANK")
+    print("________________________________ \n")
 
     balance = int(1000000)
+    count=0
 
 
 # inputs your pin and checks if its correctso as to display your available balance
     while True:
-        pin = int(input("Enter your password: "))
-        password = 12345
+        if count>=3:
+        	print("Your card has been blocked! Please visit your nearest branch to unblock your card.")
+        	break
+        elif count==0:
+        	pin = int(input("Enter your pin: "))
+        	password = 12345
+        else:
+        	pin = int(input("Enter your pin again: "))
+        	password = 12345
         if password != pin:
-            print("Password Incorrect")
+            print("Pin Incorrect!")
+            count+=1
+            print(f"You have {3-count} attempts remaining. \n")
             continue
         else:
-            print("Your Balance Is: ", balance)
+            print("\n"+f"Your existing balance is: ₹{balance}")
+            
 
     # if balance is displayed, it prompts the user to select between 1,2 or 3 for the next line of action that would be performed
     # if the user selects "1", it askes "how much" and then shows available balance by deducting the amount withdrawn from the initial balance
             #money = input("1: withdraw or 2: deposit or 3: exit: ")
             while True:
-                money = input("1: withdraw \n2: deposit\n3: exit \nEnter your choice: ")
+                money = input("\n1: withdraw \n2: deposit\n3: exit \n \nEnter your choice: ")
                 if money == "1":
-                    user_withdraw = int(input("How Much: "))
-                    print("You have withdrawn #",
-                          user_withdraw, "from your Account")
+                    user_withdraw = int(input("Enter the amount you wish to withdraw: ₹"))
                     if user_withdraw > balance:
-                        print("You don't have sufficient funds")
+                        print("\nYou don't have sufficient funds.")
                         thanks()
                     else:
+                        print('\n'+f"You have withdrawn ₹{user_withdraw} from your Account.")
                         balance = withdraw(balance, user_withdraw)
-                        print("Your balance after withdrawal is: ", balance)
+                        print(f"Your balance after withdrawal is: ₹{balance}")
                         thanks()
 
         # else if the user selects "2", it shows "how much" and then shows the total balance
                 elif money == "2":
-                    user_deposit = int(input("How Much: "))
-                    print("You have deposited $",
-                          user_deposit, "to your Account")
+                    user_deposit = int(input("Enter the amount you wish to deposit: ₹"))
+                    print(f"\nYou have deposited ₹{user_deposit} to your Account.")
                     if user_deposit > balance:
+                        balance=deposit(balance, user_deposit)
                         print("Plenty money to spend!")
-                        print("Your balance after deposit is: ",
-                              deposit(balance, user_deposit))
+                        print(f"Your balance after deposit is: ₹{balance}")
                         thanks()
                     else:
-                        print("Your balance after deposit is: ",
-                              deposit(balance, user_deposit))
+                        balance=deposit(balance, user_deposit)
+                        print(f"Your balance after deposit is: ₹{balance}")
                         thanks()
 
         # if user selects "3", thank you for banking with us!
@@ -83,6 +95,4 @@ def main():
                     continue
         break
 
-
-if __name__ == "__main__":
-    main()
+main()
