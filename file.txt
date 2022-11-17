@@ -1,0 +1,16 @@
+
+Weather stats for chennai
+Temperature=27.99000000000001
+Weather desc=mist
+Humidity=78
+Wind speed=4.63
+Weather stats for perambalur
+Temperature=26.400000000000034
+Weather desc=clear sky
+Humidity=64
+Wind speed=3.6
+Weather stats for kunnam
+Temperature=31.730000000000018
+Weather desc=broken clouds
+Humidity=63
+Wind speed=1.2
