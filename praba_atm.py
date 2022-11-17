@@ -59,7 +59,7 @@ def main():
                         print("Your balance after withdrawal is: ", balance)
                         thanks()
 
-        # else if the user selects "2", it shows "how much" and then shows the total balance
+        # elif the user selects "2", it shows "how much" and then shows the total balance
                 elif money == "2":
                     user_deposit = int(input("How Much: "))
                     print("You have deposited $",

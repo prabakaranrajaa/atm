@@ -81,7 +81,7 @@ def main():
                     thanks()
 
 
-# else if the user selects "2", it shows "how much" and then shows the total balance
+# elif the user selects "2", it shows "how much" and then shows the total balance
             case "2":
                 user_deposit = int(input("how much: "))
                 print("you have deposited #", user_deposit, "to your account")
