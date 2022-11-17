@@ -45,7 +45,8 @@ def main():
     # if the user selects "1", it askes "how much" and then shows available balance by deducting the amount withdrawn from the initial balance
             #money = input("1: withdraw or 2: deposit or 3: exit: ")
             while True:
-                money = input("1: withdraw \n2: deposit\n3: exit \nEnter your choice: ")
+                money = input(
+                    "1: withdraw \n2: deposit\n3: exit \nEnter your choice: ")
                 if money == "1":
                     user_withdraw = int(input("How Much: "))
                     print("You have withdrawn #",
